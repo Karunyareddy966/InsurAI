@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ role, setUser }) {
   return (
     <nav className="navbar">
       <div className="logo">Insurance Portal</div>
@@ -10,10 +10,9 @@ function Navbar() {
         <li><Link to="/plans">Plans</Link></li>
         <li><Link to="/appointments">Appointments</Link></li>
         <li><Link to="/voice">Voice Query</Link></li>
-        <li><Link to="/contact">Contact Us</Link></li>
-        <li><Link to="/dashboard">Dashboard</Link></li>
-        <li><Link to="/login">Login</Link></li>
-        <li><Link to="/register">Register</Link></li>
+        {role === "admin" && <li><Link to="/dashboard">Dashboard</Link></li>}
+        <li><Link to="/contact">Contact</Link></li>
+        <li><button onClick={() => setUser(null)}>Logout</button></li>
       </ul>
     </nav>
   );
