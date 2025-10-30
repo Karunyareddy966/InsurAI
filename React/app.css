@@ -1,23 +1,24 @@
-/* General Styling */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: #f8f9fa;
+  /*background: url("/images/insure.jpg") no-repeat center center fixed;*/
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /* Navbar */
 .navbar {
-  background-color: #004aad;
+  background-color: rgba(0, 74, 173, 0.9);
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: white;
 }
 
 .navbar .logo {
-  color: white;
-  font-size: 1.5rem;
   font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .nav-links {
@@ -26,39 +27,39 @@ body {
   gap: 20px;
 }
 
-.nav-links li a {
+.nav-links a,
+.nav-links button {
   color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
   text-decoration: none;
   font-weight: 500;
 }
 
-.nav-links li a:hover {
+.nav-links a:hover,
+.nav-links button:hover {
   text-decoration: underline;
 }
 
-/* Main Content */
+/* Page container */
 .main-content {
   min-height: 80vh;
   padding: 40px;
   text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  margin: 20px;
+  border-radius: 10px;
 }
 
-/* Footer */
-.footer {
-  background: #004aad;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-}
-
-/* Pages */
+/* Page box */
 .page {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   padding: 30px;
   margin: 20px auto;
+  max-width: 500px;
   border-radius: 12px;
-  max-width: 600px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
 
 /* Forms */
@@ -66,24 +67,48 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-top: 20px;
 }
 
-.form input {
+.form input,
+.form select {
   padding: 10px;
-  border: 1px solid #ccc;
   border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: white;
+  font-size: 1rem;
 }
+
 
 .form button {
-  padding: 10px;
   background: #004aad;
   color: white;
   border: none;
+  padding: 10px;
   border-radius: 8px;
   cursor: pointer;
 }
 
 .form button:hover {
   background: #003380;
+}
+
+/* Footer */
+.footer {
+  background: rgba(0, 74, 173, 0.9);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+.link-button {
+  background: none;
+  border: none;
+  color: #004aad;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-button:hover {
+  color: #003380;
 }
