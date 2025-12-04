@@ -1,0 +1,161 @@
+================================================================================
+                    HOW TO RUN INSURAI APPLICATION
+================================================================================
+
+QUICK START (3 STEPS):
+================================================================================
+
+STEP 1: Setup Database (One Time)
+----------------------------------
+1. Open MySQL
+2. Run: CREATE DATABASE insurance_app;
+3. Edit: insurai-app-backend/src/main/resources/application.properties
+   Change: spring.datasource.password=YOUR_PASSWORD
+
+
+STEP 2: Start Backend
+----------------------------------
+Option A - Double-click: start-backend.bat
+Option B - Run in terminal:
+   cd insurai-app-backend
+   mvn spring-boot:run
+
+Wait for: "Started InsuranceAppApplication"
+Keep this window OPEN!
+
+
+STEP 3: Start Frontend
+----------------------------------
+Option A - Double-click: start-frontend.bat
+Option B - Run in NEW terminal:
+   cd insurai-app-frontend/insurai-app-frontend
+   npm install (first time only)
+   npm start
+
+Browser opens to: http://localhost:3000
+Keep this window OPEN too!
+
+
+THAT'S IT! 🎉
+================================================================================
+
+
+FIRST TIME SETUP:
+================================================================================
+
+Prerequisites:
+- Java 11+ (java -version)
+- Maven 3.6+ (mvn -version)
+- Node.js 14+ (node -v)
+- MySQL 8.0+ (running)
+
+Install Frontend Dependencies (One Time):
+   cd insurai-app-frontend/insurai-app-frontend
+   npm install
+
+
+TESTING THE APP:
+================================================================================
+
+1. Register New User:
+   - Go to: http://localhost:3000/register
+   - Fill in details
+   - Click Register
+
+2. Login:
+   - Email: your-email@example.com
+   - Password: your-password
+
+3. Try Features:
+   - Dashboard: View appointments & notifications
+   - Plans: Browse insurance plans
+   - Appointments: Book new appointment
+   - Voice Assistant: Ask questions (use Chrome)
+
+4. Admin Access (Optional):
+   - Login with: admin@insurai.com / admin123 (if sample data loaded)
+   - Or update user role to ADMIN in database
+   - Access: http://localhost:3000/admin
+
+
+TROUBLESHOOTING:
+================================================================================
+
+Backend won't start:
+- Check MySQL is running
+- Verify password in application.properties
+- Check port 8080 is free: netstat -ano | findstr :8080
+
+Frontend won't start:
+- Run: npm install
+- Check port 3000 is free
+- Clear cache: npm cache clean --force
+
+Voice not working:
+- Use Chrome browser
+- Allow microphone access
+- Must be on localhost
+
+
+STOPPING THE APP:
+================================================================================
+
+1. Backend: Press Ctrl+C in backend terminal
+2. Frontend: Press Ctrl+C in frontend terminal
+
+
+IMPORTANT URLS:
+================================================================================
+
+Frontend:  http://localhost:3000
+Backend:   http://localhost:8080
+Login:     http://localhost:3000/login
+Register:  http://localhost:3000/register
+Admin:     http://localhost:3000/admin
+
+
+DOCUMENTATION:
+================================================================================
+
+For more details, see:
+- START-HERE.md          - Quick start guide
+- GETTING-STARTED.md     - Detailed getting started
+- RUN-INSTRUCTIONS.md    - Complete run instructions
+- SETUP-GUIDE.md         - Full setup guide
+- README.md              - Project overview
+
+
+SAMPLE CREDENTIALS (if sample-data.sql loaded):
+================================================================================
+
+Admin:
+  Email: admin@insurai.com
+  Password: admin123
+
+User:
+  Email: john@example.com
+  Password: password123
+
+
+SUCCESS INDICATORS:
+================================================================================
+
+✓ Backend shows: "Started InsuranceAppApplication"
+✓ Frontend shows: "Compiled successfully!"
+✓ Browser opens to http://localhost:3000
+✓ Login page displays
+✓ No errors in console (F12)
+
+
+NEED HELP?
+================================================================================
+
+1. Check documentation files
+2. Review terminal logs
+3. Check browser console (F12)
+4. Verify all prerequisites installed
+
+
+================================================================================
+                        ENJOY USING INSURAI! 🚀
+================================================================================
