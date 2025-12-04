@@ -1,0 +1,36 @@
+package com.insuranceapp.controller;
+
+import com.insuranceapp.model.Agent;
+import com.insuranceapp.service.AgentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/agents")
+@CrossOrigin(origins = "*")
+public class AgentController {
+    @Autowired
+    private AgentService agentService;
+
+    @GetMapping("/all")
+    public List<Agent> getAllAgents() {
+        return agentService.getAllAgents();
+    }
+
+    @GetMapping("/available")
+    public List<Agent> getAvailableAgents() {
+        return agentService.getAvailableAgents();
+    }
+
+    @PostMapping("/add")
+    public Agent addAgent(@RequestBody Agent agent) {
+        return agentService.createAgent(agent);
+    }
+
+    @PutMapping("/{id}/availability")
+    public Agent updateAvailability(@PathVariable Long id, @RequestBody Map<String, Boolean> body) {
+        return agentService.updateAgentAvailability(id, body.get("available"));
+    }
+}
